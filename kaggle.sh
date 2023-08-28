@@ -16,8 +16,15 @@ else
   git pull
 fi
 cd gcloud
-./down.dll.sh
-./down.model.sh
+
+source ./env
+
+for script in down.*.sh; do
+  if [ -f "$script" ]; then
+    bash "$script"
+  fi
+done
+./unpack.conf.sh
 
 clip_dir=clip-runtime
 if [ ! -d "$clip_dir" ]; then
