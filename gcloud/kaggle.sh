@@ -22,4 +22,4 @@ else
   cd $clip_dir
 fi
 
-direnv exec . ./kaggle.sh
+./kaggle.sh
