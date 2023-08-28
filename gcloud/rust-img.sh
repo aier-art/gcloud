@@ -8,3 +8,5 @@ git clone --depth=1 https://github.com/xxai-art/rust-img.git
 cd rust-img
 ./sh/libjxl.sh
 ./dist.native.sh
+rm -rf target
+rm -rf ~/.cache
