@@ -4,7 +4,7 @@
 set -e
 
 count=0
-machine_types="c2d-standard-4 c2-standard-4"
+machine_types="c2-standard-4 c2d-standard-4"
 
 for machine_type in $machine_types; do
   zones=$(gcloud compute machine-types list --filter="name=('$machine_type')" | tail -n +2 | awk '{print $2}' | sort -r)
