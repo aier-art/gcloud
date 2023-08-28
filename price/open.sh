@@ -5,7 +5,7 @@ set -e
 zone=$1
 machine_types=$2
 
-name=instance-$(date +%Y-%m-%d)-$count
+name=instance-$(date +%Y-%m-%d)-price-$3
 gcloud compute instances create $name \
   --project=ambient-highway-397200 \
   --zone=$zone \
