@@ -7,7 +7,7 @@ windows:
   - focus: 'true'
     shell_command:
     - cd /root/gcloud
-    - dstat
+    - bash
   - shell_command:
     - cd /root/gcloud
     - htop
@@ -17,4 +17,4 @@ windows:
   - shell_command:
     - cd /root/gcloud/gcloud
     - ./log.sh
-  window_name: bash
+  window_name: watch
