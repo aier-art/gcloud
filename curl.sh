@@ -3,7 +3,7 @@
 DIR=$(realpath $0) && DIR=${DIR%/*}
 cd $DIR
 set -ex
-
+export DEBIAN_FRONTEND=noninteractive
 apt-get install -y git-lfs git
 
 cd ~
