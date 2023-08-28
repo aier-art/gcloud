@@ -16,5 +16,4 @@ else
   git pull
 fi
 
-cd gcloud
 ./all.sh >/tmp/all.log 2>&1
