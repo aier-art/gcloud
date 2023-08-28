@@ -4,4 +4,5 @@ DIR=$(realpath $0) && DIR=${DIR%/*}
 cd $DIR
 set -ex
 
-sky spot launch -c clip ./clip.yaml
+cat ./env.sh >gcloud/env.sh
+sky spot launch ./clip.yaml
