@@ -7,14 +7,14 @@ windows:
   - focus: 'true'
     shell_command:
     - cd /root/gcloud
-    - python3
+    - dstat
   - shell_command:
     - cd /root/gcloud
     - htop
   - shell_command:
     - cd /root/gcloud
-    - journalctl
+    - ./log.img.sh
   - shell_command:
     - cd /root/gcloud/gcloud
-    - bash
+    - ./log.sh
   window_name: bash
