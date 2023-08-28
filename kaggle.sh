@@ -18,7 +18,11 @@ fi
 cd gcloud
 ./down.dll.sh
 ./down.model.sh
+
+if [ ! -d "clip-runtime" ]; then
 git clone --depth=1 https://github.com/xxai-art/clip-runtime.git
+fi
+
 cd clip-runtime
 direnv exec . ./kaggle.sh
 
