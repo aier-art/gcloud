@@ -42,7 +42,7 @@ run = (machine_type)=>
   for [zone,price] from li
     price = Math.round(price * 100)
     console.log zone,price/100
-    zone_li = zone_id.get(zone) or [zone]
+    zone_li = zone_id.get(zone) or ['a']
     for i from zone_li
       try
         await $"./open.sh #{zone}-#{i} #{machine_type} #{price}"
@@ -52,7 +52,7 @@ run = (machine_type)=>
         continue
   return
 
-type_li = 'c3-standard-4'
-# type_li = 'c2d-standard-4'
+# type_li = 'c3-standard-4'
+type_li = 'c2d-standard-4'
 for i from type_li.split(' ')
   await run i
