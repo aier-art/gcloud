@@ -42,7 +42,8 @@ run = (machine_type)=>
   for [zone,price] from li
     price = Math.round(price * 100)
     console.log zone,price/100
-    for i from zone_id.get(zone)
+    zone_li = zone_id.get(zone) or [zone]
+    for i from zone_li
       try
         await $"./open.sh #{zone}-#{i} #{machine_type} #{price}"
         return
