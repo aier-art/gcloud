@@ -20,6 +20,6 @@ cd gcloud
 ./down.model.sh
 git clone --depth=1 https://github.com/xxai-art/clip-runtime.git
 cd clip-runtime
-./kaggle.sh
+direnv exec . ./kaggle.sh
 
 
