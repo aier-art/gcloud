@@ -17,4 +17,4 @@ fi
 gcloud init
 gcloud auth application-default login
 sky check
-exec sky spot launch --disk-size 50 --memory 16 ./clip.yaml
+exec sky spot launch ./clip.yaml
