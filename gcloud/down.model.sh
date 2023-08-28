@@ -10,15 +10,15 @@ if [ ! -f "lib/model/$MODEL/process/tokenizer.json" ]; then
   wget -c $MODEL_URL
   FILE=$(basename $MODEL_URL)
   if [ -x "$(command -v apt-get)" ]; then
-    if ! [ -x "$(command -v pbzip2)" ]; then
-      apt-get install -y pbzip2
+    if ! [ -x "$(command -v zstd)" ]; then
+      apt-get install -y zstd
     fi
     if ! [ -x "$(command -v pv)" ]; then
       apt-get install -y pv
     fi
-    pv $FILE | pbzip2 -d | tar xf -
+    pv $FILE | zstd -d -c -T0 | tar xf -
   else
-    tar xvf $FILE
+    zstd -d -c -T0 $FILE | tar xf -
   fi
   rm $FILE
 fi
