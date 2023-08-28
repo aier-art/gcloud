@@ -15,3 +15,5 @@ else
   cd gcloud
   git pull
 fi
+
+exec ./gcloud/kaggle.sh
