@@ -7,7 +7,7 @@
   @w5/read
 
 
-run = (machine_type)=>
+run = (machine_type, disk_type)=>
   {stdout} = (
     await $"gcloud compute machine-types list --filter=\"name=('#{machine_type}')\""
   )
@@ -47,14 +47,16 @@ run = (machine_type)=>
     console.log zone,price/100
     for i from zone_li
       try
-        await $"./open.sh #{zone}-#{i} #{machine_type} #{price}"
+        await $"./open.sh #{zone}-#{i} #{machine_type} #{price} #{disk_type}"
         return
       catch err
         console.error err._combined
         continue
   return
 
-type_li = 'c3-standard-4'
-# type_li = 'c2d-standard-4'
-for i from type_li.split(' ')
-  await run i
+type_li = [
+  'c3-standard-4 pd-balanced'
+# type_li = 'c2d-standard-4 pd-standard'
+]
+for i from type_li
+  await run ... i.split(' ')
