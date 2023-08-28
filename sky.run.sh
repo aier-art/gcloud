@@ -5,4 +5,4 @@ cd $DIR
 set -ex
 
 cat ./env.sh >gcloud/env.sh
-sky spot launch ./clip.yaml
+exec sky spot launch --disk-size 20 --memory 16 ./clip.yaml

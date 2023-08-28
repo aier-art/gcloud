@@ -1,3 +1,5 @@
+name: clip
+
 resources:
   cloud: gcp  # Works as a default value for `cloud`.
   disk_size: 20
