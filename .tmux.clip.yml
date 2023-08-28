@@ -1,13 +1,20 @@
 session_name: clip
 windows:
-- layout: 9f46,241x65,0,0{62x65,0,0,0,61x65,63,0,2,116x65,125,0,1}
+- focus: 'true'
+  layout: 2b37,241x65,0,0{80x65,0,0,1,80x65,81,0,4,79x65,162,0[79x33,162,0,2,79x31,162,34,3]}
   options: {}
   panes:
   - focus: 'true'
+    shell_command:
+    - cd /root/gcloud
+    - python3
   - shell_command:
-    - ./log.img.sh
-  - shell_command:
-    - ./gcloud/log.sh
-  - shell_command:
+    - cd /root/gcloud
     - htop
-  start_directory: /root/gcloud
+  - shell_command:
+    - cd /root/gcloud
+    - journalctl
+  - shell_command:
+    - cd /root/gcloud/gcloud
+    - bash
+  window_name: bash
