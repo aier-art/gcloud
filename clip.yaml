@@ -1,19 +1,8 @@
 resources:
   cloud: gcp  # Works as a default value for `cloud`.
-
-  # Added only for SkyPilot Benchmark.
-  candidates:
-    - {instance_type: c2-standard-4}
-    - {instance_type: c2d-standard-4}
-  # - {accelerators: A100}
-  # - {accelerators: T4, cloud: aws}  # Overrides `cloud` to `aws`.
-
-spot:
-  controller:
-    resources:  # same spec as 'resources' in a task YAML
-      cloud: gcp
-      cpus: 4+  # number of vCPUs, max concurrent spot jobs = 2 * cpus
-      disk_size: 20 
+  disk_size: 20
+  cpus: 4
+  memory: 16
 
 
 # Working directory (optional) containing the project codebase.
