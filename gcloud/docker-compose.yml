@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+
+  clip:
+    restart: always
+    container_name: art-clip
+    image: xxai/clip-cpu
+    volumes:
+      - ./conf:/root/conf
+      - ./lib:/root/clip-runtime/lib
