@@ -55,8 +55,8 @@ run = (machine_type, disk_type)=>
   return
 
 type_li = [
-  'c3-standard-4 pd-balanced'
-# type_li = 'c2d-standard-4 pd-standard'
+  # 'c3-standard-4 pd-balanced'
+ 'c2d-standard-4 pd-standard'
 ]
 for i from type_li
   await run ... i.split(' ')
