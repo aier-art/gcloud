@@ -4,4 +4,4 @@ DIR=$(realpath $0) && DIR=${DIR%/*}
 cd $DIR
 set -ex
 
-sky spot launch ./clip.yaml
+sky spot launch -c clip ./clip.yaml
