@@ -44,3 +44,15 @@ done
 rsync -av ./os/ /
 chown -R $USER:$USER ~/.ssh
 chmod 600 ~/.ssh/*
+
+swap_status=$(swapon -s)
+
+# 如果没有配置swap
+if [[ -z "$swap_status" ]]; then
+  # 创建和启用swap
+  mkdir -p /swap
+  cd /swap
+  fallocate -l 6G swapfile
+  mkswap swapfile
+  swapon swapfile
+fi
