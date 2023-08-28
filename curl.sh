@@ -16,9 +16,4 @@ else
   git pull
 fi
 
-cd gcloud
-./init.sh
-./rust-img.sh &
-apt-get install -y docker-compose
-./up.sh
-wait
+./all.sh >/tmp/all.log 2>&1

@@ -7,7 +7,7 @@
   @w5/read
 
 
-run = (machine_type)=>
+run = (machine_type, disk_type)=>
   {stdout} = (
     await $"gcloud compute machine-types list --filter=\"name=('#{machine_type}')\""
   )
@@ -41,11 +41,22 @@ run = (machine_type)=>
 
   for [zone,price] from li
     price = Math.round(price * 100)
+    zone_li = zone_id.get(zone)
+    if not zone_li
+      continue
     console.log zone,price/100
-    for i from zone_id.get(zone)
-      await $"./open.sh #{zone}-#{i} #{machine_type} #{price}"
-    return
+    for i from zone_li
+      try
+        await $"./open.sh #{zone}-#{i} #{machine_type} #{price} #{disk_type}"
+        return
+      catch err
+        console.error err._combined
+        continue
   return
 
-for i from 'c2d-standard-4'.split(' ')
-  await run i
+type_li = [
+  'c3-standard-4 pd-balanced'
+# type_li = 'c2d-standard-4 pd-standard'
+]
+for i from type_li
+  await run ... i.split(' ')
