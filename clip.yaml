@@ -8,6 +8,13 @@ resources:
   # - {accelerators: A100}
   # - {accelerators: T4, cloud: aws}  # Overrides `cloud` to `aws`.
 
+spot:
+  controller:
+    resources:  # same spec as 'resources' in a task YAML
+      cloud: gcp
+      cpus: 4+  # number of vCPUs, max concurrent spot jobs = 2 * cpus
+      disk_size: 20 
+
 
 # Working directory (optional) containing the project codebase.
 # Its contents are synced to ~/sky_workdir/ on the cluster.
@@ -16,11 +23,8 @@ workdir: gcloud
 # Typical use: pip install -r requirements.txt
 # Invoked under the workdir (i.e., can use its files).
 setup: |
-  echo "Running setup."
-
+  ./init.sh
 # Typical use: make use of resources, such as running training.
 # Invoked under the workdir (i.e., can use its files).
 run: |
-  echo "Hello, SkyPilot!"
-  conda env list
-
+  ./up.sh
