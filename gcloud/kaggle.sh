@@ -14,7 +14,10 @@ for script in down.*.sh; do
 done
 
 clip_dir=clip-runtime
-if [ ! -d "$clip_dir" ]; then
+if [ -d "$clip_dir" ]; then
+  cd $clip_dir
+  git pull
+else
   git clone --depth=1 https://github.com/xxai-art/$clip_dir.git
 fi
 
