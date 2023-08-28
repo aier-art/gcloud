@@ -22,7 +22,7 @@ set_to_yes() {
 
 set_to_yes /etc/ssh/sshd_config PermitRootLogin
 
-service sshd restart
+service sshd restart || true
 
 apt-get update
 apt-get install -y curl bash rsync curl

@@ -17,3 +17,4 @@ fi
 gcloud init
 gcloud auth application-default login
 sky check
+exec sky spot launch ./clip.yaml

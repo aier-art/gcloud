@@ -5,7 +5,9 @@ cd $DIR
 set -ex
 
 apt-get install -y git-lfs git
+
 cd ~
+
 if [ ! -d "gcloud" ]; then
   git clone --depth=1 https://github.com/aier-art/gcloud.git
   cd gcloud
