@@ -3,7 +3,7 @@
 export RUST_LOG="debug,globset=warn,watchexec=off,supervisor=warn,hyper=warn,rustls=warn,h2=warn,tower=warn,ort=warn"
 export MODEL=AltCLIP-XLMR-L-m18
 
-export MODEL_URL=https://huggingface.co/xxai-art/tar/resolve/main/$MODEL.tar.bz2
+export MODEL_URL=https://huggingface.co/xxai-art/tar/resolve/main/$MODEL.tar.zstd
 
 export ORT_DYLIB_PATH=$DIR/lib/so/onnxruntime.dll
 
