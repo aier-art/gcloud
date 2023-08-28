@@ -1,6 +1,6 @@
 session_name: clip
 windows:
-- layout: fdd1,170x52,0,0{125x52,0,0,5,44x52,126,0,6}
+- layout: 9f46,241x65,0,0{62x65,0,0,0,61x65,63,0,2,116x65,125,0,1}
   options: {}
   panes:
   - focus: 'true'
