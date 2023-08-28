@@ -9,13 +9,13 @@ TODIR=$DIR/gcloud
 cp clip-runtime/env $TODIR
 cp clip-runtime/down.*.sh $TODIR
 
-clip_pipe_sh=conf/conn/clip_pipe.sh
+clip_pipe_sh=conn/clip_pipe.sh
 
-sed -i 's/^TASK_PRE_CPU=.*/TASK_PRE_CPU=1.1/' $clip_pipe_sh
+sed -i 's/^TASK_PRE_CPU=.*/TASK_PRE_CPU=1.01/' conf/$clip_pipe_sh
 
 tar cf - conf/conn | zstd >/tmp/conf.tar.zstd
 cd conf
-git checkout clip_pipe_sh
+git checkout $clip_pipe_sh
 cd ..
 
 # 计算当前的sha3哈希值
