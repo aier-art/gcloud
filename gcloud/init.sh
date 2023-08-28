@@ -52,13 +52,12 @@ if [[ -z "$swap_status" ]]; then
   # 创建和启用swap
   mkdir -p /swap
   cd /swap
-  fallocate -l 6G swapfile
+  fallocate -l 12G swapfile
   mkswap swapfile
   swapon swapfile
   # 检查 /etc/fstab 中是否有 /swap/swapfile 条目
   if ! grep -q "/swap/swapfile" /etc/fstab; then
-      # 如果没有，则将新的虚拟内存添加到 /etc/fstab
-      echo "/swap/swapfile none swap sw 0 0" >> /etc/fstab
+    # 如果没有，则将新的虚拟内存添加到 /etc/fstab
+    echo "/swap/swapfile none swap sw 0 0" >>/etc/fstab
   fi
 fi
-
