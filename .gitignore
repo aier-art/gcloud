@@ -1,4 +1,5 @@
 gcloud/env.sh
 lib/
 conf/
-.direnv/python
+.direnv/python/
+/price/init.sh

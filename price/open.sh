@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-set -e
+DIR=$(realpath $0) && DIR=${DIR%/*}
+cd $DIR
+set -ex
 
 zone=$1
 machine_types=$2
@@ -22,4 +24,5 @@ gcloud compute instances create $name \
   --shielded-vtpm \
   --shielded-integrity-monitoring \
   --labels=goog-ec-src=vm_add-gcloud \
+  --metadata-from-file=$DIR/init.sh \
   --reservation-affinity=any && echo "$name opened"
