@@ -52,7 +52,7 @@ if [[ -z "$swap_status" ]]; then
   # 创建和启用swap
   mkdir -p /swap
   cd /swap
-  fallocate -l 12G swapfile
+  fallocate -l 8G swapfile
   mkswap swapfile
   swapon swapfile
   # 检查 /etc/fstab 中是否有 /swap/swapfile 条目
