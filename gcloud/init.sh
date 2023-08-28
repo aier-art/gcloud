@@ -25,7 +25,7 @@ set_to_yes /etc/ssh/sshd_config PermitRootLogin
 service sshd restart
 
 apt-get update
-apt-get install -y curl bash rsync
+apt-get install -y curl bash rsync curl
 if ! [ -x "$(command -v docker)" ]; then
   curl -fsSL https://get.docker.com | bash -s docker
 fi
