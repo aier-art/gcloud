@@ -43,8 +43,12 @@ run = (machine_type)=>
     price = Math.round(price * 100)
     console.log zone,price/100
     for i from zone_id.get(zone)
-      await $"./open.sh #{zone}-#{i} #{machine_type} #{price}"
-    return
+      try
+        await $"./open.sh #{zone}-#{i} #{machine_type} #{price}"
+        return
+      catch err
+        console.error err._combined
+        continue
   return
 
 for i from 'c2d-standard-4'.split(' ')
