@@ -4,7 +4,7 @@ DIR=$(realpath $0) && DIR=${DIR%/*}
 cd $DIR
 
 if ! [ -x "$(command -v tmuxp)" ]; then
-  apt-get install -y tmuxp
+  DEBIAN_FRONTEND=noninteractive apt-get install -y tmuxp
 fi
 
 session=clip
