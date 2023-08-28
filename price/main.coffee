@@ -40,8 +40,8 @@ for i from Object.keys(cost)
 li.sort (a,b)=>a[1]-b[1]
 
 for [zone,price] from li
-  price = Math.round(price * 100)/100
-  console.log zone,price
+  price = Math.round(price * 100)
+  console.log zone,price/100
   for i from zone_id.get(zone)
-    await $"./open.sh #{zone}-#{i} #{machine_type} #{price.replace('.','-')}"
+    await $"./open.sh #{zone}-#{i} #{machine_type} #{price}"
     break
