@@ -47,5 +47,5 @@ run = (machine_type)=>
     return
   return
 
-for i from 'c2-standard-4 c2d-standard-4'.split(' ')
+for i from 'c2d-standard-4'.split(' ')
   await run i
