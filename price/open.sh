@@ -5,7 +5,7 @@ cd $DIR
 set -ex
 
 zone=$1
-machine_types=$2
+machine_type=$2
 
 name=instance-$(date +%Y-%m-%d)-price-$3
 gcloud compute instances create $name \

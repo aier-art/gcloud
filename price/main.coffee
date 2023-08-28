@@ -27,8 +27,6 @@ run = (machine_type)=>
         li = [id]
         zone_id.set zone,li
 
-  console.log zone_id
-  process.exit()
   ROOT = uridir(import.meta)
 
   yml = load join ROOT, 'pricing.yml'
