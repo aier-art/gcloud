@@ -19,7 +19,7 @@ if [ -d "$clip_dir" ]; then
   git pull
 else
   git clone --depth=1 https://github.com/xxai-art/$clip_dir.git
+  cd $clip_dir
 fi
 
-cd $clip_dir
 direnv exec . ./kaggle.sh
