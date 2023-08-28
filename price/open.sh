@@ -6,7 +6,7 @@ set -ex
 
 zone=$1
 machine_type=$2
-name=instance-$(date +%Y-%m-%d)-price-$3
+name=$(date "+%Y%m%d-%H%M%S")-price-$3
 disk_type=$4
 
 gcloud compute instances create $name \
