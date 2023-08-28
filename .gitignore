@@ -1,3 +1,4 @@
+gcloud/env.sh
 lib/
 conf/
 .direnv/python
