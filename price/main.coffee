@@ -51,5 +51,7 @@ run = (machine_type)=>
         continue
   return
 
-for i from 'c2d-standard-4'.split(' ')
+type_li = 'c3-standard-4'
+# type_li = 'c2d-standard-4'
+for i from type_li.split(' ')
   await run i
