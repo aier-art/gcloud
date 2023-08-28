@@ -43,5 +43,5 @@ for [zone,price] from li
   price = Math.round(price * 100)/100
   console.log zone,price
   for i from zone_id.get(zone)
-    await $"./open.sh #{zone}-#{i} #{machine_type} #{price}"
+    await $"./open.sh #{zone}-#{i} #{machine_type} #{price.replace('.','-')}"
     break
