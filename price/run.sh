@@ -6,3 +6,4 @@ set -ex
 
 rm -f pricing.yml
 wget https://raw.githubusercontent.com/Cyclenerd/google-cloud-pricing-cost-calculator/master/pricing.yml
+./main.coffee
