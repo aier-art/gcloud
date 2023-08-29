@@ -40,7 +40,7 @@ if [ ! -f "lib/so/$ORT_DLL" ]; then
   ort=$ort-$version
 
   tgz=$ort.tgz
-  wget --tries=999 -c https://github.com/microsoft/onnxruntime/releases/download/v$version/$tgz
+  wget --tries=999 -c ${GHPROXY}https://github.com/microsoft/onnxruntime/releases/download/v$version/$tgz
 
   tar xvf $tgz
   rm -rf so

@@ -7,6 +7,7 @@ set -ex
 if [ ! -f "lib/model/$MODEL/process/tokenizer.json" ]; then
   mkdir -p lib/model
   cd lib/model
+
   wget --tries=999 -c $MODEL_URL
   FILE=$(basename $MODEL_URL)
   if [ -x "$(command -v apt-get)" ]; then
