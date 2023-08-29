@@ -47,8 +47,9 @@ run = (limit, machine_type, disk_type)=>
     console.log zone,price/100
     for i from zone_li
       try
-        while limit-- > 0
+        while limit > 0
           await $"./open.sh #{zone}-#{i} #{machine_type} #{price} #{disk_type}"
+          -- limit
         return
       catch err
         console.error err._combined
