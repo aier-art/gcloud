@@ -4,13 +4,13 @@ windows:
   layout: 2b37,241x65,0,0{80x65,0,0,1,80x65,81,0,4,79x65,162,0[79x33,162,0,2,79x31,162,34,3]}
   options: {}
   panes:
+  - shell_command:
+    - cd /root/gcloud
+    - htop
   - focus: 'true'
     shell_command:
     - cd /root/gcloud
     - tail -f /tmp/all.log
-  - shell_command:
-    - cd /root/gcloud
-    - htop
   - shell_command:
     - cd /root/gcloud
     - ./log.img.sh
