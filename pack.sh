@@ -13,7 +13,7 @@ clip_pipe_sh=conn/clip_pipe.sh
 
 sed -i 's/^TASK_PRE_CPU=.*/TASK_PRE_CPU=1/' conf/$clip_pipe_sh
 
-tar cf - conf/conn | zstd >/tmp/conf.tar.zstd
+tar cf - conf/clash.yml conf/conn | zstd >/tmp/conf.tar.zstd
 cd conf
 git checkout $clip_pipe_sh
 cd ..
