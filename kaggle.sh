@@ -8,6 +8,7 @@ apt-get install -y git-lfs git
 
 curl --connect-timeout 2 -m 4 -s https://t.co >/dev/null || GFW=1
 
+[ $GFW ] && git config --global url."https://ghproxy.com/https://github.com".insteadOf "https://github.com"
 
 cd ~
 
