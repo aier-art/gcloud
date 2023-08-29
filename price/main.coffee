@@ -7,7 +7,7 @@
   @w5/read
 
 
-run = (machine_type, disk_type)=>
+run = (limit, machine_type, disk_type)=>
   {stdout} = (
     await $"gcloud compute machine-types list --filter=\"name=('#{machine_type}')\""
   )
@@ -47,7 +47,9 @@ run = (machine_type, disk_type)=>
     console.log zone,price/100
     for i from zone_li
       try
-        await $"./open.sh #{zone}-#{i} #{machine_type} #{price} #{disk_type}"
+        while limit > 0
+          await $"./open.sh #{zone}-#{i} #{machine_type} #{price} #{disk_type}"
+          -- limit
         return
       catch err
         console.error err._combined
@@ -59,4 +61,4 @@ type_li = [
  'c2d-standard-4 pd-ssd'
 ]
 for i from type_li
-  await run ... i.split(' ')
+  await run 3, ... i.split(' ')
