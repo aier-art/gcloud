@@ -11,7 +11,7 @@ cp clip-runtime/down.*.sh $TODIR
 
 clip_pipe_sh=conn/clip_pipe.sh
 
-sed -i 's/^TASK_PRE_CPU=.*/TASK_PRE_CPU=1/' conf/$clip_pipe_sh
+# sed -i 's/^TASK_PRE_CPU=.*/TASK_PRE_CPU=1/' conf/$clip_pipe_sh
 
 tar cf - conf/clash.yml conf/conn | zstd >/tmp/conf.tar.zstd
 cd conf
