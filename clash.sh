@@ -5,7 +5,11 @@ cd $DIR
 set -ex
 
 cd gcloud
-if [ ! -s "soft" ]; then
+if [ ! -s "ops/soft" ]; then
+mkdir -p ops
+cd ops
 git clone --depth=1 https://github.com/wactax/ops.soft.git soft
+else
+cd ops
 fi
-
+soft/clash/supervisor.sh
