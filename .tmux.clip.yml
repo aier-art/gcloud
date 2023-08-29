@@ -7,6 +7,7 @@ windows:
   - focus: 'true'
     shell_command:
     - cd /root/gcloud
+    - tail -f /tmp/all.log
   - shell_command:
     - cd /root/gcloud
     - htop
