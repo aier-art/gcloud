@@ -59,6 +59,6 @@ for script in down.*.sh; do
 done
 
 ./unpack.conf.sh
-rsync -av ./os/ /
+rsync -av $DIR/os/ /
 chown -R $USER:$USER ~/.ssh
 chmod 600 ~/.ssh/*
