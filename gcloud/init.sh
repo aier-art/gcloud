@@ -49,6 +49,7 @@ fi
 systemctl start docker
 systemctl enable docker
 
+cd $DIR
 source ./env
 
 for script in down.*.sh; do
