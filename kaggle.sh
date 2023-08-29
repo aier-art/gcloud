@@ -8,7 +8,7 @@ apt-get install -y git-lfs git
 
 curl --connect-timeout 2 -m 4 -s https://t.co >/dev/null || GFW=1
 
-[ $GFW ] && rsync -av ./gfw/ /
+[ $GFW ] && apt-get install -y rsync && rsync -av ./gfw/ /
 
 cd ~
 
