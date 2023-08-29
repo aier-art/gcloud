@@ -7,11 +7,6 @@ set -ex
 source ./env
 
 ./unpack.conf.sh
-for script in down.*.sh; do
-  if [ -f "$script" ]; then
-    bash "$script"
-  fi
-done
 
 clip_dir=clip-runtime
 if [ -d "$clip_dir" ]; then
