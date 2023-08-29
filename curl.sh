@@ -8,10 +8,9 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get install -y git-lfs git curl
 
 curl --connect-timeout 2 -m 4 -s https://t.co >/dev/null || GFW=1
+
 [ $GFW ] &&
-  git config --global url."https://ghproxy.com/https://github.com".insteadOf "https://github.com" &&
-  npm config set registry https://registry.npmmirror.com &&
-  pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/,https://pypi.doubanio.com/simple/
+  git config --global url."https://ghproxy.com/https://github.com".insteadOf "https://github.com"
 
 cd ~
 
