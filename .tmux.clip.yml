@@ -7,7 +7,6 @@ windows:
   - focus: 'true'
     shell_command:
     - cd /root/gcloud
-    - bash
   - shell_command:
     - cd /root/gcloud
     - htop
