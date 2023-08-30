@@ -8,6 +8,10 @@ source ./env
 
 ./unpack.conf.sh
 
+curl --connect-timeout 2 -m 4 -s https://t.co >/dev/null || export GFW=1
+[ $GFW ] && ./clash.sh
+
+
 clip_dir=clip-runtime
 if [ -d "$clip_dir" ]; then
   cd $clip_dir
