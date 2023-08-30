@@ -4,7 +4,6 @@ DIR=$(realpath $0) && DIR=${DIR%/*}
 cd $DIR
 set -ex
 
-cd gcloud
 if [ ! -s "ops/soft" ]; then
   mkdir -p ops
   cd ops
