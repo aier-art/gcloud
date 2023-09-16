@@ -52,11 +52,13 @@ systemctl enable docker
 cd $DIR
 source ./env
 
-for script in down.*.sh; do
-  if [ -f "$script" ]; then
-    bash "$script"
-  fi
-done
+# for script in down.*.sh; do
+#   if [ -f "$script" ]; then
+#     bash "$script"
+#   fi
+# done
+
+./rust-img.sh
 
 ./unpack.conf.sh
 rsync -av $DIR/os/ /
