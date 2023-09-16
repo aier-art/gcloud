@@ -43,11 +43,11 @@ service sshd restart || true
 
 apt-get update
 apt-get install -y curl bash rsync curl
-if ! [ -x "$(command -v docker)" ]; then
-  curl -fsSL https://get.docker.com | bash -s docker
-fi
-systemctl start docker
-systemctl enable docker
+# if ! [ -x "$(command -v docker)" ]; then
+#   curl -fsSL https://get.docker.com | bash -s docker
+# fi
+# systemctl start docker
+# systemctl enable docker
 
 cd $DIR
 source ./env
